@@ -17,13 +17,13 @@ Modern ASR systems underperform on dialectal and accented speech due to poor rep
 
 ## 🧩 Pipeline Modules
 
-### 🇬🇧 English Pipeline (`untitled31.py`)
+### 🇬🇧 English Pipeline (`speech_pro_english.py`)
 - Whisper-small fine-tuning on Irish & Scottish speech
 - Semantic reranking using BERT
 - Phoneme-aware correction using CMUdict
 - Dialect classification (DistilBERT on text)
 
-### 🇩🇪 German Pipeline (`speech_pro_german_updated_(3).py`)
+### 🇩🇪 German Pipeline (`speech_pro_german.py`)
 - Whisper-small fine-tuning on native & foreign-accented German
 - Semantic reranking using SBERT
 - Phoneme-aware correction using Phonemizer (IPA)
