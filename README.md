@@ -55,17 +55,6 @@ Modern ASR systems underperform on dialectal and accented speech due to poor rep
 
 ---
 
-## 🧪 Evaluation Samples
-
-Example transcription evolution across pipeline stages:
-
-| Sample | Reference | Baseline | Reranked | Corrected |
-|--------|-----------|----------|----------|-----------|
-| #0     | Dies zeigt, wer auf europäischer Ebene die Gesetzgebung verzögert. | same | same | same |
-| #4     | ... man muss ihr die Mittel hierfür geben. | ... man muss **ja** die Mittel hierfür geben. | corrected | corrected |
-
----
-
 ## 🛠 Requirements
 
 Install all dependencies:
