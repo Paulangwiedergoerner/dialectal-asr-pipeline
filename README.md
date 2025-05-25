@@ -1,73 +1,73 @@
-# Dialectal ASR Enhancement Pipeline
+# 🧠 Dialectal ASR Enhancement Pipeline
 
-This repository contains the full implementation of our modular pipeline for improving Automatic Speech Recognition (ASR) on dialectal and accented speech. The system builds on top of OpenAI’s Whisper model and includes post-processing modules for semantic reranking, phoneme-aware correction, and speaker origin classification.
+This repository contains the complete implementation of our research paper:
 
-## 🧠 Authors
-- Abdelrahman Mansour
-- Hashem Zayed
-- Paula Vargas
+**"Enhancing Dialectal ASR with Post-Processing and Speaker Classification for English and German Speech"**
+
+The system builds upon OpenAI’s Whisper model to improve recognition accuracy on dialectal English (Irish and Scottish) and accented German by applying three post-decoding modules: semantic reranking, phoneme-aware correction, and speaker origin classification.
 
 ---
 
 ## 🔍 Project Overview
 
-Many state-of-the-art ASR models underperform on dialectal and accented speech due to limited linguistic representation in training corpora. This pipeline addresses these challenges by:
-
-- Fine-tuning Whisper on dialect-specific datasets.
-- Reranking Whisper’s N-best beam outputs using semantic similarity (BERT/SBERT).
-- Correcting phoneme-level transcription errors using CMUdict (English) or Phonemizer (German).
-- Classifying speaker accent (native/foreign) using low-level acoustic features (MFCCs, ZCR, spectral contrast).
+Modern ASR systems underperform on dialectal and accented speech due to poor representation of regional phonology and prosody in training data. This project presents a modular pipeline that improves Whisper's transcription output post-decoding without modifying the core model.
 
 ---
-## 📜 Paper
-You can read the full research paper here:
-Enhancing Dialectal ASR with Post-Processing and Speaker Classification (PDF)
 
----
-## 📂 Modules Included
+## 🧩 Pipeline Modules
 
-### English Pipeline
-- 📁 `untitled31.py`: Fine-tuning + semantic reranking + phoneme correction  
-- 📊 Dialect classification (Irish vs. Scottish) using DistilBERT
+### 🇬🇧 English Pipeline (`untitled31.py`)
+- Whisper-small fine-tuning on Irish & Scottish speech
+- Semantic reranking using BERT
+- Phoneme-aware correction using CMUdict
+- Dialect classification (DistilBERT on text)
 
-### German Pipeline
-- 📁 `speech_pro_german_updated_(3).py`: Fine-tuning + reranking + IPA correction + accent classification  
-- 🔍 Logistic regression classifier trained on MFCCs and other acoustic features
+### 🇩🇪 German Pipeline (`speech_pro_german_updated_(3).py`)
+- Whisper-small fine-tuning on native & foreign-accented German
+- Semantic reranking using SBERT
+- Phoneme-aware correction using Phonemizer (IPA)
+- Speaker origin classification using logistic regression on MFCCs, ZCR, and spectral contrast
 
 ---
 
 ## 📊 Results
 
-| Model Variant           | WER (German) |
-|------------------------|--------------|
-| Whisper Baseline       | 5.67%        |
-| + Semantic Reranking   | 1.89%        |
-| + Phoneme Correction   | 1.89%        |
+### English
+- **WER (after correction):** 0.77%
+- **Dialect classification accuracy:** 79.76%
 
-- English WER: **0.77%**
-- German speaker classification accuracy: **79.76%**
+### German
+| Pipeline Stage           | WER (%)   |
+|--------------------------|-----------|
+| Whisper Baseline         | 5.67      |
+| + Semantic Reranking     | 1.89      |
+| + Phoneme Correction     | 1.89      |
+
+- **Accent classification accuracy:** 79.76%
 
 ---
 
 ## 📁 Data Sources
 
-- 📚 [Common Voice v13.0 (German)](https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0)
-- 📚 [Ylacombe Dialectal English Dataset](https://huggingface.co/datasets/ylacombe/english_dialects)
+- 🗣️ [Common Voice v13.0 (German)](https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0)
+- 🗣️ [Ylacombe English Dialects Dataset (Hugging Face)](https://huggingface.co/datasets/ylacombe/english_dialects)
+
+---
+
+## 🧪 Evaluation Samples
+
+Example transcription evolution across pipeline stages:
+
+| Sample | Reference | Baseline | Reranked | Corrected |
+|--------|-----------|----------|----------|-----------|
+| #0     | Dies zeigt, wer auf europäischer Ebene die Gesetzgebung verzögert. | same | same | same |
+| #4     | ... man muss ihr die Mittel hierfür geben. | ... man muss **ja** die Mittel hierfür geben. | corrected | corrected |
 
 ---
 
 ## 🛠 Requirements
 
-- Python ≥ 3.9
-- Hugging Face Transformers
-- PyTorch
-- Librosa
-- JiWER
-- Sentence-BERT
-- Phonemizer
-
-Install all dependencies via:
+Install all dependencies:
 
 ```bash
 pip install -r requirements.txt
-
