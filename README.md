@@ -4,7 +4,7 @@ This repository contains code and documentation for enhancing Automatic Speech R
 
 ## 📄 Research Paper
 See the full research report here:
-[`Dialectal_ASR_Research_Paper.pdf`](./research/Dialectal_ASR_Research_Paper.pdf)
+[`Dialectal_ASR_Research_Paper.pdf`](./research/Enhancing Dialectal ASR Research paper.pdf)
 
 ## 🧠 System Overview
 
