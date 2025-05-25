@@ -2,7 +2,7 @@
 
 This repository contains the complete implementation of our research paper:
 
-**"Enhancing Dialectal ASR with Post-Processing and Speaker Classification for English and German Speech"**
+**"Enhancing Dialectal ASR Research paper"**
 
 The system builds upon OpenAI’s Whisper model to improve recognition accuracy on dialectal English (Irish and Scottish) and accented German by applying three post-decoding modules: semantic reranking, phoneme-aware correction, and speaker origin classification.
 
