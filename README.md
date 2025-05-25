@@ -2,7 +2,8 @@
 
 This repository contains the complete implementation of our research paper:
 
-**"Enhancing Dialectal ASR Research paper"**
+[📄 Enhancing Dialectal ASR Research Paper (PDF)](https://github.com/Paulangwiedergoerner/dialectal-asr-pipeline/blob/main/Dialectal_ASR_Research_Paper.pdf)
+
 
 The system builds upon OpenAI’s Whisper model to improve recognition accuracy on dialectal English (Irish and Scottish) and accented German by applying three post-decoding modules: semantic reranking, phoneme-aware correction, and speaker origin classification.
 
