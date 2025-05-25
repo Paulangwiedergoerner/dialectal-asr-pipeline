@@ -1,21 +1,21 @@
-# 🧠 Dialectal ASR Enhancement Pipeline
+# Dialectal ASR Enhancement Pipeline
 
 This repository contains the complete implementation of our research paper:
 
-[📄 Enhancing Dialectal ASR Research Paper (PDF)](https://github.com/Paulangwiedergoerner/dialectal-asr-pipeline/blob/main/Enhancing%20Dialectal%20ASR%20Research%20paper.pdf)
+[Enhancing Dialectal ASR Research Paper (PDF)](https://github.com/Paulangwiedergoerner/dialectal-asr-pipeline/blob/main/Enhancing%20Dialectal%20ASR%20Research%20paper.pdf)
 
 
 The system builds upon OpenAI’s Whisper model to improve recognition accuracy on dialectal English (Irish and Scottish) and accented German by applying three post-decoding modules: semantic reranking, phoneme-aware correction, and speaker origin classification.
 
 ---
 
-## 🔍 Project Overview
+## Project Overview
 
 Modern ASR systems underperform on dialectal and accented speech due to poor representation of regional phonology and prosody in training data. This project presents a modular pipeline that improves Whisper's transcription output post-decoding without modifying the core model.
 
 ---
 
-## 🧩 Pipeline Modules
+## Pipeline Modules
 
 ### 🇬🇧 English Pipeline (`speech_pro_english.py`)
 - Whisper-small fine-tuning on Irish & Scottish speech
@@ -31,7 +31,7 @@ Modern ASR systems underperform on dialectal and accented speech due to poor rep
 
 ---
 
-## 📊 Results
+## Results
 
 ### English
 - **WER (after correction):** 0.77%
@@ -48,14 +48,14 @@ Modern ASR systems underperform on dialectal and accented speech due to poor rep
 
 ---
 
-## 📁 Data Sources
+## Data Sources
 
-- 🗣️ [Common Voice v13.0 (German)](https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0)
-- 🗣️ [Ylacombe English Dialects Dataset (Hugging Face)](https://huggingface.co/datasets/ylacombe/english_dialects)
+- [Common Voice v13.0 (German)](https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0)
+- [Ylacombe English Dialects Dataset (Hugging Face)](https://huggingface.co/datasets/ylacombe/english_dialects)
 
 ---
 
-## 🛠 Requirements
+## Requirements
 
 Install all dependencies:
 
